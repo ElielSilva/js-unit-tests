@@ -38,6 +38,5 @@ const productDetails = (firstProduct, secondProduct) => [
     },
   },
 ];
-const lista = productDetails('a','b')
-console.log(lista[0] !== lista[1]);
+
 module.exports = productDetails;

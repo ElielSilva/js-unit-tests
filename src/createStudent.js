@@ -16,7 +16,8 @@
 */
 
 const createStudent = (nome) => {
-  return { name: nome , feedback : () => 'Eita pessoa boa!' };
+  const obj = { name: nome, feedback: () => 'Eita pessoa boa!' };
+  return obj;
 };
-console.log(createStudent('ELIEL'));
+
 module.exports = createStudent;
