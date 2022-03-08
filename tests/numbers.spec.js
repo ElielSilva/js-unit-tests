@@ -32,7 +32,7 @@ describe('2 - Implemente os casos de teste para a função `numbers`', () => {
     // Escreva um teste em que a função recebe [' '] e retorna false
   //});
   it('4 unção recebe [" "] e retorna false', () => {
-    expect(numbers([1, 'a', 3])).toBeFalsy();
+    expect(numbers([' '])).toBeFalsy();
   })
   
 });
