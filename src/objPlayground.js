@@ -52,5 +52,5 @@ const arrayGenerator = (type, object) => {
     return Object.entries(object);
   }
 };
-console.log(Math.floor(5/2));
+
 module.exports = { calculator, arrayGenerator };
