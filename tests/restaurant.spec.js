@@ -94,9 +94,10 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     // objetoRetornado.order("coxinha");
     // objetoRetornado.consumption // Retorno: ["coxinha"]
     // ```
-  it('4 - Verifique se objetoRetornado.consumption, após a criação do menu, retorna um array vazio.', () => {
+  it('5 - Verifique se objetoRetornado.consumption, após a criação do menu, retorna um array vazio.', () => {
     const objetoRetornado = createMenu({ food: {}, drink: {} });
-    expect(objetoRetornado.order('coxinha')).toEqual([])
+    objetoRetornado.order('coxinha')
+    expect(objetoRetornado.consumption).toEqual(['coxinha'])
   })
     // Agora faça o PASSO 3 no arquivo `src/restaurant.js`.
     // --------------------------------------------------------------------------------------
@@ -109,6 +110,14 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     // objetoRetornado.consumption // Retorno: ["coxinha", "agua", "sopa", "sashimi"]
     // ```
     // Agora faça o TESTE 7 deste arquivo.
+  it('6 - Verifique se objetoRetornado.consumption, após a criação do menu, retorna um array vazio.', () => {
+    const objetoRetornado = createMenu({ food: {}, drink: {} });
+    objetoRetornado.order("coxinha");
+    objetoRetornado.order("agua");
+    objetoRetornado.order("sopa");
+    objetoRetornado.order("sashimi");
+    expect(objetoRetornado.consumption).toEqual(["coxinha", "agua", "sopa", "sashimi"])
+  })
     // --------------------------------------------------------------------------------------
     // TESTE 7: Verifique se a função `order` aceita que pedidos repetidos sejam acrescidos a consumption.
     // ```
@@ -118,6 +127,13 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     // objetoRetornado.consumption // Retorno: ['coxinha', 'agua', 'coxinha']
     // ```
     // Agora faça o TESTE 8 deste arquivo.
+  it('7 - Verifique se objetoRetornado.consumption, após a criação do menu, retorna um array vazio.', () => {
+    const objetoRetornado = createMenu({ food: {}, drink: {} });
+    objetoRetornado.order('coxinha');
+    objetoRetornado.order('agua');
+    objetoRetornado.order('coxinha');
+    expect(objetoRetornado.consumption).toEqual(['coxinha', 'agua', 'coxinha'])
+  })
     // --------------------------------------------------------------------------------------
     // TESTE 8: Verifique se, ao chamar `objetoRetornado.pay()`, retorna-se a soma dos preços de tudo que foi pedido, conforme registrado em `objetoRetornado.consumption`
     // ```
@@ -126,6 +142,13 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     // objetoRetornado.order('coxinha');
     // objetoRetornado.pay() // Retorno: somaDosPreçosDosPedidos
     // ```
+  it('7 - Verifique se objetoRetornado.consumption, após a criação do menu, retorna um array vazio.', () => {
+    const objetoRetornado = createMenu({food: {coxinha: 3.90, sanduiche: 9.90},drinks: {agua: 3.90, cerveja: 6.90}});
+    objetoRetornado.order('coxinha');
+    objetoRetornado.order('agua');
+    objetoRetornado.order('coxinha');
+    expect(objetoRetornado.pay()).toBeCloseTo(27.06)
+  })
     // Agora faça o PASSO 4 no arquivo `src/restaurant.js`.
   //});
 });
