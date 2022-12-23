@@ -13,7 +13,6 @@
 */
 
 const average = (lista) => {
-  console.log(lista.length === 0);
   if (lista.length === 0) {
     return undefined;
   }
@@ -28,10 +27,7 @@ const average = (lista) => {
     arrayNum += 1;
     contador += iterator;
   }
-  console.log();
   return Math.round(contador / arrayNum);
 };
-
-console.log(average([]));
 
 module.exports = average;

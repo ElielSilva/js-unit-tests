@@ -65,7 +65,7 @@ describe('9 - Implemente os casos de teste da função `getCharacter`', () => {
     });
   })
   // Teste se a função retorna o objeto correto para o parâmetro 'Melissandre',
-  it('passar um nome que não está na tabela, a função retorna undefined', () => {
+  it('Teste se a função retorna o objeto correto para o parâmetro "Melissandre"', () => {
     expect(getCharacter('Melissandre')).toEqual({
       name: 'Melissandre',
       class: 'Necromancer',
